@@ -5,12 +5,14 @@ from flask import Flask, render_template, request
 from openai import OpenAI
 from flask_cors import CORS
 import os
-import spacy
+from dotenv import load_dotenv
 
 app = Flask(__name__)
 CORS(app)
 
-api_key  = "sk-HDNjLo-p5dHaLfucqro_pL8uDvagnLF9lJ9cX5eiNqT3BlbkFJS4nF--aCd1pfd7RiSVUAqgSaSEq4M5UUtBQrexvKgA"
+load_dotenv()
+api_key = os.getenv('API_KEY')
+
 
 client = OpenAI(api_key = api_key)
 
@@ -44,9 +46,7 @@ def home():
 
 @app.route("/get")
 def get_bot_response(): 
-    print("get was called")   
     userText = request.args.get('msg')  
-    print(userText)
     response = get_completion(userText)  
     #return str(bot.get_response(userText)) 
     return response
