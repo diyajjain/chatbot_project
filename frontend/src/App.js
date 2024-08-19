@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import './App.css'; // Make sure this path is correct
+import './App.css'; 
 
 function App() {
   const [input, setInput] = useState("");

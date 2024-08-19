@@ -25,6 +25,7 @@ def get_completion(query, model="gpt-4o-mini"):
         {"role": "system", "content": system_prompt},
         {"role": "user", "content": user_prompt}
         ]
+    
     response = client.chat.completions.create(
         model=model,
         messages=messages,
@@ -52,7 +53,7 @@ if __name__ == "__main__":
 # Bucket 1: Improving the Backend (BE) and core AI system
     # Grounding your AI system
         # Step 1: create a corpus of information about the office
-        # Step 2: Connect that corpus of information to the LLM
+        # Step 2: Connect that corpus of information to the LLeawitque
             # Option 1: just stick the entire corpus of info into the prompt
             # Option 2 (probably too complicated/unnecessary for this use case) - RAG (retrieval augmented generation): create a separate index with each document being a question-answer pair.
     # Prompt engineering + Evaluation
