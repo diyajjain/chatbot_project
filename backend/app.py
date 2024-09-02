@@ -6,7 +6,7 @@ from openai import OpenAI
 from flask_cors import CORS
 import os
 from dotenv import load_dotenv
-from prompts import SYSTEM_PROMPT_V1
+from backend.prompts import SYSTEM_PROMPT_V1
 
 app = Flask(__name__)
 CORS(app)
